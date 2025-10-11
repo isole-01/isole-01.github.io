@@ -1,0 +1,141 @@
+{
+  "projects": [
+    {
+      "slug": "pulse-clash",
+      "title": "Pulse Clash",
+      "subtitle": "Arcade duel driven by heart-rate sensors",
+      "date": "June 2025",
+      "tags": [
+        "Interactive",
+        "Art",
+        "Game"
+      ],
+      "description": "Two-player arcade where each player's heart rate changes the difficulty for their opponent. Exhibited at V2_ Lab for the Unstable Media.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "Designer & Developer",
+      "tech": [
+        "Sensors",
+        "Game Dev",
+        "Realtime"
+      ],
+      "links": {},
+      "featured": true,
+      "content": [
+        {
+          "title": "Overview",
+          "body": "I designed and implemented a two-player arcade game where heart rate drives game difficulty. The result is a playful yet competitive installation piece."
+        },
+        {
+          "title": "Approach",
+          "body": "Custom sensor readouts feed into a game loop that tunes parameters in real time. The difficulty scaling keeps matches energetic and unpredictable."
+        },
+        {
+          "title": "Exhibitions",
+          "body": "Shown across multiple exhibitions at V2_ Lab and beyond."
+        }
+      ]
+    },
+    {
+      "slug": "chicago-accidents",
+      "title": "Chicago Accidents",
+      "subtitle": "Clustering & risk prediction from crash data",
+      "date": "Fall 2024",
+      "tags": [
+        "Data Mining",
+        "ML"
+      ],
+      "description": "Clustered Chicago regions by crash patterns and predicted department damage class as low/high using public data.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "Data Scientist",
+      "tech": [
+        "Python",
+        "Pandas",
+        "Scikit-learn"
+      ],
+      "links": {},
+      "featured": true
+    },
+    {
+      "slug": "lyrics-emotion-recognition",
+      "title": "Music Lyrics Emotion Recognition",
+      "subtitle": "Transformers + lexicons for 9-emotion detection",
+      "date": "Spring 2024",
+      "tags": [
+        "NLP",
+        "ML"
+      ],
+      "description": "Detected presence of nine core emotions from song lyrics using transformer models mixed with lexicon features.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "NLP Engineer",
+      "tech": [
+        "Transformers",
+        "PyTorch"
+      ],
+      "links": {},
+      "featured": false
+    },
+    {
+      "slug": "ca-duet",
+      "title": "2D Cellular Automata Duet",
+      "subtitle": "Generative music from CA rules",
+      "date": "Spring 2023",
+      "tags": [
+        "Generative Art",
+        "Music"
+      ],
+      "description": "Designed CA rules to generate melodies in various scales using Max/MSP.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "Creative Coder",
+      "tech": [
+        "Max/MSP",
+        "Music Theory"
+      ],
+      "links": {},
+      "featured": false
+    },
+    {
+      "slug": "nethack-ai",
+      "title": "Nethack: Exploration, Pathfinding & Combat",
+      "subtitle": "Hybrid agent with A*, greedy heuristics, logic programming",
+      "date": "Fall 2023",
+      "tags": [
+        "AI",
+        "Search"
+      ],
+      "description": "Hybrid agent for object-finding and combat in Nethack using A*, greedy heuristics, and logic programming.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "AI Engineer",
+      "tech": [
+        "Python",
+        "A*"
+      ],
+      "links": {},
+      "featured": false
+    },
+    {
+      "slug": "software-test-case-generation",
+      "title": "Software Test Case Generation",
+      "subtitle": "LLVM-based randomized & deterministic test generation",
+      "date": "Spring 2022",
+      "tags": [
+        "Software Engineering",
+        "Compilers"
+      ],
+      "description": "Generated test cases for C code based on coverage criteria using LLVM IR tooling.",
+      "thumbnail": "assets/img/thumb-800x450.svg",
+      "cover": "assets/img/cover-1200x600.svg",
+      "role": "Engineer",
+      "tech": [
+        "C",
+        "LLVM"
+      ],
+      "links": {},
+      "featured": false
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Projects — Abdolrahim Tooranian</title>
+<meta name="description" content="A clean, fast portfolio &amp; CV.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/style.css">
+<meta property="og:title" content="Projects — Abdolrahim Tooranian">
+<meta property="og:description" content="A clean, fast portfolio &amp; CV.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/cover-1200x600.svg">
+<script defer src="scripts/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html" aria-label="Home">
+      <span class="logo">∑</span><span>Abdolrahim&nbsp;Tooranian</span>
+    </a>
+    <nav aria-label="Primary" role="navigation">
+      <button class="btn ghost menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="about.html">About</a></li>
+        <li><a href="projects.html">Projects</a></li>
+        <li><a href="cv/">CV</a></li>
+        <li><a href="mailto:tooranian@gmail.com" class="small">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button class="btn secondary" id="theme-toggle" aria-label="Toggle theme" title="Theme">Auto</button>
+      <a class="btn" href="projects.html">View Projects</a>
+    </div>
+  </div>
+</header>
+
+<main class="container section">
+  <h1>Projects</h1>
+  <div class="controls" role="group" aria-label="Project filters">
+    <input id="search" class="input" type="search" placeholder="Search projects…" aria-label="Search projects" />
+    <div id="filters" class="controls"></div>
+  </div>
+  <div id="projects" class="grid cards" aria-live="polite"></div>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <span>© 2025 Abdolrahim Tooranian</span>
+      <span class="small">Leiden, NL · <a href="mailto:tooranian@gmail.com">tooranian@gmail.com</a> · <a href="https://github.com/isole-01">GitHub</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
