@@ -140,3 +140,114 @@ h1{ font-size: clamp(2rem, 5vw, 3.3rem); line-height:1.1; margin:.4rem 0 1rem }
 
 hr{ border:0; height:1px; background:var(--border) }
 .small{ font-size:.9rem; color:var(--muted) }
+
+
+/* ===========================
+   THEME SKINS (neutral palettes)
+   Switch with: <html data-skin="turquoise-mist"> or data-skin="rose-dusk"
+   =========================== */
+
+/* --- Turquoise Mist (cool, soft) --- */
+:root[data-skin="turquoise-mist"]{
+  /* light */
+  --bg:     #f8fbfa;
+  --text:   #0e1413;
+  --muted:  #5d6b69;
+  --card:   #eef4f3;
+  --border: #d8e4e1;
+  --accent: #2e9788;      /* default accent for this skin */
+  --accent-contrast: #ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root[data-skin="turquoise-mist"]{
+    /* dark (auto) */
+    --bg:     #0c1211;
+    --text:   #e6f1ee;
+    --muted:  #9aa8a5;
+    --card:   #121a19;
+    --border: #1c2725;
+    --accent: #54b7ab;
+    --accent-contrast: #0b0f17;
+  }
+}
+/* explicit manual overrides */
+:root[data-skin="turquoise-mist"][data-theme="light"]{
+  --bg:#f8fbfa; --text:#0e1413; --muted:#5d6b69; --card:#eef4f3; --border:#d8e4e1; --accent:#2e9788; --accent-contrast:#ffffff;
+}
+:root[data-skin="turquoise-mist"][data-theme="dark"]{
+  --bg:#0c1211; --text:#e6f1ee; --muted:#9aa8a5; --card:#121a19; --border:#1c2725; --accent:#54b7ab; --accent-contrast:#0b0f17;
+}
+
+/* --- Rose Dusk (warm, muted) --- */
+:root[data-skin="rose-dusk"]{
+  /* light */
+  --bg:     #fdf9fb;
+  --text:   #1b1216;
+  --muted:  #715d67;
+  --card:   #faf1f4;
+  --border: #ead5dc;
+  --accent: #b85672;      /* default accent for this skin */
+  --accent-contrast: #ffffff;
+}
+@media (prefers-color-scheme: dark){
+  :root[data-skin="rose-dusk"]{
+    /* dark (auto) */
+    --bg:     #120e12;
+    --text:   #f3eaf0;
+    --muted:  #b8a6af;
+    --card:   #191319;
+    --border: #2a2026;
+    --accent: #d47990;
+    --accent-contrast: #0b0f17;
+  }
+}
+/* explicit manual overrides */
+:root[data-skin="rose-dusk"][data-theme="light"]{
+  --bg:#fdf9fb; --text:#1b1216; --muted:#715d67; --card:#faf1f4; --border:#ead5dc; --accent:#b85672; --accent-contrast:#ffffff;
+}
+:root[data-skin="rose-dusk"][data-theme="dark"]{
+  --bg:#120e12; --text:#f3eaf0; --muted:#b8a6af; --card:#191319; --border:#2a2026; --accent:#d47990; --accent-contrast:#0b0f17;
+}
+
+/* ===========================
+   OPTIONAL: Accent override (keeps the skin’s neutrals, swaps accent)
+   Switch with: <html data-accent="turquoise"> or data-accent="rose">
+   =========================== */
+
+:root[data-accent="turquoise"]{ --accent:#2e9788; --accent-contrast:#ffffff; }
+@media (prefers-color-scheme: dark){
+  :root[data-accent="turquoise"]{ --accent:#54b7ab; --accent-contrast:#0b0f17; }
+}
+:root[data-theme="dark"][data-accent="turquoise"]{ --accent:#54b7ab; --accent-contrast:#0b0f17; }
+:root[data-theme="light"][data-accent="turquoise"]{ --accent:#2e9788; --accent-contrast:#ffffff; }
+
+:root[data-accent="rose"]{ --accent:#b85672; --accent-contrast:#ffffff; }
+@media (prefers-color-scheme: dark){
+  :root[data-accent="rose"]{ --accent:#d47990; --accent-contrast:#0b0f17; }
+}
+:root[data-theme="dark"][data-accent="rose"]{ --accent:#d47990; --accent-contrast:#0b0f17; }
+:root[data-theme="light"][data-accent="rose"]{ --accent:#b85672; --accent-contrast:#ffffff; }
+
+
+/* Turquoise Mist — use the older deep-blue dark neutrals */
+@media (prefers-color-scheme: dark){
+  :root[data-skin="turquoise-mist"]{
+    --bg: #0b0f17;        /* deep blue-black */
+    --text: #eaf0ff;
+    --muted: #a7b2c7;
+    --card: #111827;
+    --border: #1f2a3c;
+    --accent: #54b7ab;    /* teal in dark */
+    --accent-contrast: #0b0f17;
+  }
+}
+/* Explicit manual dark override too */
+:root[data-skin="turquoise-mist"][data-theme="dark"]{
+  --bg: #0b0f17;
+  --text: #eaf0ff;
+  --muted: #a7b2c7;
+  --card: #111827;
+  --border: #1f2a3c;
+  --accent: #54b7ab;
+  --accent-contrast: #0b0f17;
+}
