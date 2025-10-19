@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Abdolrahim Tooranian — Portfolio &amp; CV</title>
-<meta name="description" content="A clean, fast portfolio &amp; CV.">
+<title>Rahim Tooranian</title>
+<meta name="description" content="Portfolio, About, Projects & CV for Rahim Tooranian.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles/style.css">
-<meta property="og:title" content="Abdolrahim Tooranian — Portfolio &amp; CV">
-<meta property="og:description" content="A clean, fast portfolio &amp; CV.">
+<meta property="og:title" content="Rahim Tooranian">
+<meta property="og:description" content="Portfolio, About, Projects & CV for Rahim Tooranian.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/img/cover-1200x600.svg">
 <script defer src="scripts/main.js"></script>
@@ -16,61 +16,173 @@
 <body>
 <header class="site-header">
   <div class="container navbar">
-    <a class="brand" href="index.html" aria-label="Home">
-      <span class="logo">∑</span><span>Abdolrahim&nbsp;Tooranian</span>
+    <a class="brand" href="home.html" aria-label="Home">
+      <span class="logo">∑</span><span>Rahim&nbsp;Tooranian</span>
     </a>
     <nav aria-label="Primary" role="navigation">
       <button class="btn ghost menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
       <ul id="menu">
-        <li><a href="about.html">About</a></li>
-        <li><a href="projects.html">Projects</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
         <li><a href="cv/">CV</a></li>
         <li><a href="mailto:tooranian@gmail.com" class="small">Contact</a></li>
       </ul>
     </nav>
     <div class="actions">
       <button class="btn secondary" id="theme-toggle" aria-label="Toggle theme" title="Theme">Auto</button>
-      <a class="btn" href="projects.html">View Projects</a>
+      <a class="btn" href="#projects">View Projects</a>
     </div>
   </div>
 </header>
-
 <main class="container">
-  <section class="hero">
-    <div>
-      <span class="tag">ML · AI · Generative Art</span>
-      <h1>Hi, I'm Abdolrahim.<br>I build thoughtful software and playful systems.</h1>
-      <p class="lead">M.Sc. Computer Science (AI). I like making data sing, models behave, and art compute. Explore my work and experiments.</p>
-      <div class="cta">
-        <a class="btn" href="projects.html">Browse Projects</a>
-        <a class="btn secondary" href="about.html">About Me</a>
-        <a class="btn ghost" href="cv/" rel="nofollow">View CV</a>
+  
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="card" style="padding:1rem">
+        <img src="assets/img/me.jpg" alt="Portrait placeholder" style="border-radius:20px; display:block">
+        <hr style="margin:1rem 0">
+        <p><strong>Contact</strong><br>
+        <a href="mailto:atoo@kth.se">atoo@kth.se</a><br>
+        <a href="https://github.com/isole-01">github.com/isole-01</a></p>
+        <a href="https://www.linkedin.com/in/tooranian/">LinkedIn</a>
+        <p class="small">Based in Stockholm, Sweden</p>
       </div>
-    </div>
-    <div class="card">
-      <img class="thumb" src="assets/img/cover-1200x600.svg" alt="Cover image placeholder">
-      <div class="content">
-        <div class="badge">Featured</div>
-        <h3 style="margin:.4rem 0">Pulse Clash</h3>
-        <p class="small">Two-player arcade where your heart rate messes with your opponent’s difficulty. Exhibition piece @ V2_ Lab.</p>
-        <a href="project.html?slug=pulse-clash">Read case study →</a>
+      <div>
+        <h2>About</h2>
+        <p>(Soon to become a computer scientist) and/or (A bad guitarist) focused on machine learning, AI music, and computational creativity. I really enjoy turning ideas into playful interactive pieces.</p>
+        <p>Currently working on my thesis in <a href="https://musaiclab.wordpress.com/" target="_blank" rel="noopener noreferrer">MUSAiC Lab</a> at KTH Sweden under Professor Bob Sturm.</p>
+        <div class="section card" style="padding:1rem">
+          <h3>Experience</h3>
+          <div class="timeline">
+            <div class="item">
+                <h4>Music Informatics & ML Intern — KTH Royal Institute of Technology</h4>
+                <p class="small">Aug 2025 – Jan 2026 · Applying policy optimization to tune symbolic music generation models, focusing on diversity with audio reference datasets.</p>
+              </div>
+            <div class="item">
+              <h4>ML Engineering Intern — Derak Cloud</h4>
+              <p class="small">Dec 2022 – Feb 2023 · Automated ML pipelines with experiment tracking, model deployment & monitoring inside Docker containers.</p>
+            </div>
+            <div class="item">
+              <h4>Data Science Intern — Walgreens Boots Alliance</h4>
+              <p class="small">Apr 2022 – Dec 2022 · Time series forecasting and pipeline improvement stuff on Azure Databricks for specialty patients.</p>
+            </div>
+              
+          </div>
+        </div>
+        <div class="section card" style="padding:1rem">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="item"><h4>M.Sc., Computer Science (AI) — University of Pisa</h4><p class="small">2023–2026 · Also exchange student in Creative Intelligence & Technology programme at Leiden Univesity dipping my toes in the artistic side.</p></div>
+            <div class="item"><h4>B.Sc., Computer Engineering — Shiraz University</h4><p class="small">2018–2023 · Both hardware, software and a lot of pain with courses I didn't like but hey it has helped me build a solid foundation in CS.</p></div>
+          </div>
+        </div>
+        <!-- <div class="section card" style="padding:1rem">
+          <h3>Skills</h3>
+          <p class="small">Programming in different languages but mainly Python for over 6 years· ML/AI essential libraries and stuff, data viz · Problem solving, teamwork, teaching and very bad singing.</p>
+        </div> -->
       </div>
     </div>
   </section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div id="projects-list" class="grid cards" aria-live="polite"></div>
+  </section>
+  
 
-  <section class="section">
-    <h2>Selected projects</h2>
-    <div id="featured" class="grid cards" aria-live="polite"></div>
-  </section>
 </main>
-
 <footer class="footer">
   <div class="container">
     <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
-      <span>© 2025 Abdolrahim Tooranian</span>
-      <span class="small">Leiden, NL · <a href="mailto:tooranian@gmail.com">tooranian@gmail.com</a> · <a href="https://github.com/isole-01">GitHub</a></span>
+      <span>© 2025 Rahim Tooranian</span>
+      <span class="small">Stockholm, SE · <a href="mailto:tooranian@gmail.com">tooranian@gmail.com</a> · <a href="https://github.com/isole-01">GitHub</a></span>
     </div>
   </div>
 </footer>
+
+<style>
+  dialog#project-preview{width:min(1000px,95vw);border:1px solid var(--border);border-radius:16px;padding:0;box-shadow:var(--shadow)}
+  #project-preview::backdrop{background:rgba(0,0,0,.6)}
+  #project-preview header{display:flex;justify-content:space-between;align-items:center;padding:.75rem 1rem;border-bottom:1px solid var(--border);background:var(--card)}
+  #project-preview iframe{width:100%;height:min(75vh,720px);border:0}
+</style>
+
+<dialog id="project-preview" aria-label="Project preview">
+  <header>
+    <strong id="pp-title">Preview</strong>
+    <button class="btn ghost" id="pp-close">Close</button>
+  </header>
+  <iframe id="pp-frame" title="Embedded project preview"></iframe>
+  <div class="small" style="padding:.6rem 1rem;">
+    Some sites block embedding. If the preview doesn't load, use
+    <a id="pp-open" target="_blank" rel="noopener">Open in new tab</a>.
+  </div>
+</dialog>
+
+<script>
+  // Minimal project data
+  const projects = [
+    {
+      slug: "pulse-clash",
+      title: "PULSE CLASH",
+      url: "https://anasoutoneves.com/PULSE-CLASH",
+      desc: "Interactive two-player game where your heartbeat sets your opponent’s challenge — a timing feedback loop between pulse and difficulty (shown at Leiden University’s Media Technology exhibition).",
+      tags: ["Interactive","Art","Game"]
+    },
+    {
+      slug: "lovewound",
+      title: "Lovewound",
+      url: "https://sites.google.com/view/artificialcreatures2025/portfolios/abdolrahim-tooranian/lovewound",
+      desc: "An interactive creature that “bleeds” unless cared for; explores touch, neediness, and vulnerability.",
+      tags: ["Installation","HCI","Interactive"]
+    }
+  ];
+
+  // Render cards into your existing #projects-list
+  const wrap = document.getElementById("projects-list");
+  if (wrap) {
+    wrap.innerHTML = projects.map(p => `
+      <article class="card">
+        <a href="${p.url}" target="_blank" rel="noopener" aria-label="${p.title}">
+          <div class="thumb">
+            <!-- Swap this placeholder with a real image if you have one -->
+            <img src="assets/img/cover-1200x600.svg" alt="${p.title} thumbnail" style="width:100%;height:100%;object-fit:cover">
+          </div>
+        </a>
+        <div class="content">
+          <div class="small" style="display:flex;gap:.5rem;flex-wrap:wrap">
+            ${(p.tags||[]).map(t=>`<span class="badge">${t}</span>`).join('')}
+          </div>
+          <h3 style="margin:.3rem 0 .2rem">
+            <a href="${p.url}" target="_blank" rel="noopener">${p.title}</a>
+          </h3>
+          <p class="small">${p.desc}</p>
+          <div style="display:flex;gap:.5rem;margin-top:.5rem">
+            <a class="btn" href="${p.url}" target="_blank" rel="noopener">Open</a>
+            <button class="btn secondary preview-btn" data-url="${p.url}" data-title="${p.title}">Preview</button>
+          </div>
+        </div>
+      </article>
+    `).join('');
+  }
+
+  // Preview dialog logic
+  const dlg   = document.getElementById('project-preview');
+  const frame = document.getElementById('pp-frame');
+  const title = document.getElementById('pp-title');
+  const openL = document.getElementById('pp-open');
+
+  wrap?.addEventListener('click', (e) => {
+    const btn = e.target.closest('.preview-btn'); if (!btn) return;
+    const url = btn.dataset.url; const t = btn.dataset.title || 'Preview';
+    frame.removeAttribute('src'); // reset to avoid stale
+    title.textContent = t; openL.href = url; frame.src = url;
+    if (typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open','');
+  });
+
+  document.getElementById('pp-close')?.addEventListener('click', () => dlg.close());
+  document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && dlg.open) dlg.close(); });
+</script>
 </body>
 </html>
