@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en" data-skin="turquoise-mist" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PCG Mosque — Rahim Tooranian</title>
+  <meta name="description" content="Procedural generation of Persian-style mosques in Minecraft: terrain scanning, layout scoring, domes, minarets, and pools.">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles/style.css">
+  <link rel="canonical" href="project-pcg-mosque.html">
+  <meta name="robots" content="index,follow">
+  <meta property="og:title" content="PCG Mosque — Rahim Tooranian">
+  <meta property="og:description" content="Procedural generation of Persian-style mosques in Minecraft with themed palettes.">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="assets/img/cover-1200x600.svg">
+  <meta property="og:url" content="project-pcg-mosque.html">
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="index.html#projects" aria-label="Home">
+      <span class="logo">∑</span><span>Rahim&nbsp;Tooranian</span>
+    </a>
+    <nav aria-label="Primary" role="navigation">
+      <button class="btn ghost menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#projects" aria-current="page">Projects</a></li>
+        <li><a href="cv/">CV</a></li>
+        <li><a href="mailto:tooranian@gmail.com" class="small">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button class="btn secondary" id="theme-toggle" aria-label="Toggle theme" title="Theme">Dark</button>
+      <a class="btn" href="index.html#projects">All Projects</a>
+    </div>
+  </div>
+</header>
+
+<main class="container">
+  <section class="proj-hero">
+    <a href="index.html#projects" class="small">← Back to Projects</a>
+    <h1>PCG Mosque</h1>
+    <div class="proj-meta">
+      <span>Procedural Generation · Game AI</span>
+      <span>Minecraft</span>
+      <span>By Rahim Tooranian</span>
+    </div>
+  </section>
+
+  <!-- Hero image (replace with a real thumbnail if you have one) -->
+  <img class="card" src="assets/img/mine1.png" alt="Project cover" style="width:100%">
+
+  <div class="proj-body">
+    <article class="section">
+
+      <section class="section card section-card" id="prelude">
+        <h2>Prelude: Persian Mosque Architecture Lore</h2>
+        <p>Inspired by Persian-style architecture—like the Pink Mosque in Shiraz—this project generates mosques in Minecraft. Core elements include a central ablution pool, a wide open prayer hall (typically unfurnished), intricate geometric patterns beneath domes, and minarets used historically for the call to prayer.</p>
+        <img class="card" src="assets/img/mine2.png" alt="Project cover">
+        <!-- <img class="card" src="assets/img/mine3.png" alt="Project cover"> -->
+        <!-- <img class="card" src="assets/img/mine4.png" alt="Project cover"> -->
+        <img class="card" src="assets/img/mine5.png" alt="Project cover">
+
+
+
+        <!-- Optional source links for reference (use real images later) -->
+        <p class="small">
+          References for visuals:
+          <a href="https://www.tasteiran.net/stories/10071/nasir-ol-molk-mosque" target="_blank" rel="noopener">Pink Mosque</a>,
+          <a href="https://www.eavartravel.com/blog/2022/10/24/130562/isfahan-mosques/" target="_blank" rel="noopener">Lonban Mosque</a>,
+          <a href="https://itto.org/iran/photo/sheikh-lotfallah-mosque/" target="_blank" rel="noopener">Sheikh Lotfollah Mosque</a>.
+        </p>
+      </section>
+
+      <section class="section card section-card" id="overview">
+        <h2>1. Overview</h2>
+        <p>The system analyzes terrain with a set of conditions and scores to choose the best layout. The main prayer hall is prioritized; minarets and a central pool are added when space allows. Style choices are randomized yet coherent via a unified theme, and sizes—and sometimes shapes—adapt to available space.</p>
+      </section>
+
+      <section class="section card section-card" id="implementation">
+        <h2>2. Implementation</h2>
+
+        <h3 id="terrain">2.1 Terrain scanning and layout</h3>
+        <ul>
+          <li><strong>Inputs:</strong> height-map + water mask. Find maximal rectangles that are flat, water-safe, non-overlapping, and above a minimum area.</li>
+          <li><strong>Water buffer:</strong> expand the water mask by <code>water_margin</code>.</li>
+          <li><strong>Smoothing:</strong> Gaussian blur (σ ≈ 1.2) to ignore tiny bumps.</li>
+          <li><strong>Flatness test:</strong> local max/min in a <code>7×7</code> window; accept if <code>(max−min) ≤ 1</code> block.</li>
+          <li><strong>Rectangle enumeration:</strong> histogram-stack method; keep aspect ratio ≥ <code>min_aspect</code>.</li>
+          <li><strong>Defects &amp; greedy selection:</strong> allow up to <code>fill_limit ≈ 20%</code> bad-cells, sort by area, cap to <code>max_rects ≈ 30</code>.</li>
+        </ul>
+
+        <p><strong>Scoring.</strong> Composite score promotes the hall site:</p>
+        <table class="card" style="width:100%;border-collapse:separate;border-spacing:0">
+          <thead><tr><th style="text-align:left;padding:.5rem 1rem">Weight</th><th style="text-align:left;padding:.5rem 1rem">Factor</th></tr></thead>
+          <tbody>
+            <tr><td style="padding:.4rem 1rem">0.9</td><td style="padding:.4rem 1rem">Area</td></tr>
+            <tr><td style="padding:.4rem 1rem">0.8</td><td style="padding:.4rem 1rem">Proximity to other pads</td></tr>
+            <tr><td style="padding:.4rem 1rem">0.6</td><td style="padding:.4rem 1rem">Flatness</td></tr>
+            <tr><td style="padding:.4rem 1rem">0.3</td><td style="padding:.4rem 1rem">Squareness</td></tr>
+          </tbody>
+        </table>
+
+        <p>After picking the main building site, the system optionally adds a pool and/or an external minaret and places doors near flatter, drier areas close to other structures.</p>
+        <img class="card" src="assets/img/mine6.png" alt="Project cover" style="width:80%;">
+
+        <h3 id="hall">2.2 Building the Prayer Hall</h3>
+        <p>Based on footprint and some randomness, the dome can be spherical or ellipsoidal (very elongated footprints avoid ellipsoids). Wall/dome heights scale with size; circular domes sometimes get rooftop minarets.</p>
+        <p>Each generation picks a fresh palette and block set so the result feels unique but cohesive. Stained-glass patterns echo the Pink Mosque. Floor motifs moved from CA/L-systems to simpler tilings (swirls, waves, stripes) that read better at Minecraft’s resolution.</p>
+        <img class="card" src="assets/img/mine7.png" alt="Project cover" style="width:70%;">
+        <img class="card" src="assets/img/mine11.png" alt="Project cover" style="width:70%;">
+
+        <img class="card" src="assets/img/mine10.png" alt="Project cover" style="width:60%;">
+        <h3 id="extras">2.3 Minaret and Pool</h3>
+        <p>When space allows, a small pool and an external minaret with stairs are added; colors/blocks follow the active theme.</p>
+        <img class="card" src="assets/img/mine8.png" alt="Project cover" style="width:70%;">
+        <img class="card" src="assets/img/mine9.png" alt="Project cover" style="width:70%;">
+
+      </section>
+
+      <section class="section card section-card" id="conclusion">
+        <h2>3. Conclusion &amp; Future Work</h2>
+        <p>Themes and block sets could be tuned by biome or nearby blocks. Terrain parameters could adapt to environment (e.g., relax flatness on mountains). ML/LLMs could help with theme selection and dynamic parameter tuning.</p>
+      </section>
+
+      <section class="section card section-card" id="refs">
+        <h2>4. References</h2>
+        <ol class="small">
+          <li>Aggarwal, A. et al. <em>Geometric Applications of a Matrix-Searching Algorithm</em>. Algorithmica 2 (1987).</li>
+          <li>Wolfram, S. <em>A New Kind of Science</em>. Wolfram Media, 2002.</li>
+          <li>Ilachinski, A. <em>Cellular Automata: A Discrete Universe</em>. World Scientific, 2001.</li>
+          <li>Prusinkiewicz, P., Lindenmayer, A. <em>The Algorithmic Beauty of Plants</em>. Springer, 1990.</li>
+        </ol>
+      </section>
+    </article>
+
+    <aside class="sidebar">
+      <div class="card section-card" style="margin-top:1rem">
+        <h3 style="margin:.2rem 0 .5rem">Links</h3>
+        <div class="small">
+          <div><a href="index.html#projects">All projects</a></div>
+        </div>
+      </div>
+    </aside>
+  </div>
+</main>
+
+<footer class="footer">
+  <div class="container small">© 2025 Rahim Tooranian</div>
+</footer>
+
+<!-- Minimal JS for theme + mobile menu -->
+<script>
+(() => {
+  const menuBtn = document.querySelector('.menu-btn');
+  const menu = document.getElementById('menu');
+  menuBtn?.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+  });
+  const root = document.documentElement;
+  const btn = document.getElementById('theme-toggle');
+  const saved = localStorage.getItem('theme') || root.getAttribute('data-theme') || 'dark';
+  apply(saved);
+  btn?.addEventListener('click', () => {
+    const cur = localStorage.getItem('theme') || root.getAttribute('data-theme') || 'dark';
+    const next = cur === 'dark' ? 'light' : (cur === 'light' ? 'auto' : 'dark');
+    localStorage.setItem('theme', next); apply(next);
+  });
+  function apply(mode){
+    root.removeAttribute('data-theme');
+    if(mode !== 'auto') root.setAttribute('data-theme', mode);
+    if(btn) btn.textContent = mode[0].toUpperCase() + mode.slice(1);
+  }
+})();
+</script>
+</body>
+</html>
