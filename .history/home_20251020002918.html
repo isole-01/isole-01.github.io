@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Abdolrahim Tooranian — Portfolio, About & Projects</title>
+<meta name="description" content="Portfolio, About, Projects & CV for Abdolrahim Tooranian.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles/style.css">
+<meta property="og:title" content="Abdolrahim Tooranian — Portfolio, About & Projects">
+<meta property="og:description" content="Portfolio, About, Projects & CV for Abdolrahim Tooranian.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/img/cover-1200x600.svg">
+<script defer src="scripts/main.js"></script>
+</head>
+<body>
+<header class="site-header">
+  <div class="container navbar">
+    <a class="brand" href="home.html" aria-label="Home">
+      <span class="logo">∑</span><span>Abdolrahim&nbsp;Tooranian</span>
+    </a>
+    <nav aria-label="Primary" role="navigation">
+      <button class="btn ghost menu-btn" aria-expanded="false" aria-controls="menu">Menu</button>
+      <ul id="menu">
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="cv/">CV</a></li>
+        <li><a href="mailto:tooranian@gmail.com" class="small">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="actions">
+      <button class="btn secondary" id="theme-toggle" aria-label="Toggle theme" title="Theme">Auto</button>
+      <a class="btn" href="#projects">View Projects</a>
+    </div>
+  </div>
+</header>
+<main class="container">
+  
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="about-grid">
+      <div class="card" style="padding:1rem">
+        <img src="assets/img/me.jpg" alt="Portrait placeholder" style="border-radius:20px; display:block">
+        <hr style="margin:1rem 0">
+        <p><strong>Contact</strong><br>
+        <a href="mailto:atoo@kth.se">atoo@kth.se</a><br>
+        <a href="https://github.com/isole-01">github.com/isole-01</a></p>
+        <a href="https://www.linkedin.com/in/tooranian/">LinkedIn</a>
+        <p class="small">Based in Stockholm, Sweden</p>
+      </div>
+      <div>
+        <h2>About</h2>
+        <p>(Soon to become a computer scientist) and/or (A bad guitarist) focused on machine learning, AI music, and computational creativity. I really enjoy turning ideas into playful interactive pieces.</p>
+        <p>Currently working on my thesis in <a href="https://musaiclab.wordpress.com/" target="_blank" rel="noopener noreferrer">MUSAiC Lab</a> at KTH Sweden under Bob Sturm.</p>
+        <div class="section card" style="padding:1rem">
+          <h3>Experience</h3>
+          <div class="timeline">
+            <div class="item">
+              <h4>ML Engineering Intern — Derak Cloud</h4>
+              <p class="small">Dec 2022 – Feb 2023 · Automated ML pipelines with experiment tracking, model deployment & monitoring inside Docker containers.</p>
+            </div>
+            <div class="item">
+              <h4>Data Science Intern — Walgreens Boots Alliance</h4>
+              <p class="small">Apr 2022 – Dec 2022 · Time series forecasting and pipeline improvement stuff on Azure Databricks for specialty patients.</p>
+            </div>
+          </div>
+        </div>
+        <div class="section card" style="padding:1rem">
+          <h3>Education</h3>
+          <div class="timeline">
+            <div class="item"><h4>M.Sc., Computer Science (AI) — University of Pisa</h4><p class="small">2023–2026 · Also exchange student in Creative Intelligence & Technology programme at Leiden Univesity dipping my toes in the artistic side.</p></div>
+            <div class="item"><h4>B.Sc., Computer Engineering — Shiraz University</h4><p class="small">2018–2023 · Both hardware, software and a lot of pain with courses I didn't like but hey it has helped me build a solid foundation in CS.</p></div>
+          </div>
+        </div>
+        <div class="section card" style="padding:1rem">
+          <h3>Skills</h3>
+          <p class="small">Programming in different languages but mainly Python for over 6 years· ML/AI essential libraries and stuff, data viz · Problem solving, teamwork, teaching and very bad singing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
+    <div class="controls" role="group" aria-label="Project filters">
+      <input id="search" class="input" type="search" placeholder="Search projects…" aria-label="Search projects" />
+      <div id="filters" class="controls"></div>
+    </div>
+    <div id="projects-list" class="grid cards" aria-live="polite"></div>
+  </section>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap:1rem;">
+      <span>© 2025 Abdolrahim Tooranian</span>
+      <span class="small">Stockholm, SE · <a href="mailto:tooranian@gmail.com">tooranian@gmail.com</a> · <a href="https://github.com/isole-01">GitHub</a></span>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
